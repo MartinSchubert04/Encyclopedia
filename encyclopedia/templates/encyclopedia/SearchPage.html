@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search results
+{% endblock %}
+
+{% block body %}
+    <h1>Page not found.</h1>
+    <h3>Perhaps you meant...</h3>
+
+    <ul>
+        {% for entry in similar %}
+            <li><a href="{% url 'wiki:ShowPage' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
